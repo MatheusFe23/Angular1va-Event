@@ -32,4 +32,9 @@
 .menu ul li a:hover {
   color: #1abc9c;
 }
+.menu a.ativo {
+  font-weight: bold;
+  color: #1abc9c;
+  border-bottom: 2px solid #1abc9c;
+}
 
