@@ -9,14 +9,27 @@ export interface Evento {
   local: string;
 }
 
+// evento.service.ts
 @Injectable({
   providedIn: 'root',
 })
 export class EventoService {
   private eventos: Evento[] = [];
 
+  constructor() {
+    const eventosSalvos = localStorage.getItem('eventos');
+    if (eventosSalvos) {
+      this.eventos = JSON.parse(eventosSalvos);
+    }
+  }
+
+  private salvarNoLocalStorage() {
+    localStorage.setItem('eventos', JSON.stringify(this.eventos));
+  }
+
   adicionarEvento(evento: Evento) {
     this.eventos.push(evento);
+    this.salvarNoLocalStorage();
   }
 
   listarEventos(): Evento[] {
@@ -28,4 +41,15 @@ export class EventoService {
       evento.nome.toLowerCase().includes(nome.toLowerCase())
     );
   }
+
+  excluirEvento(index: number) {
+    this.eventos.splice(index, 1);
+    this.salvarNoLocalStorage();
+  }
+
+  atualizarEvento(index: number, eventoAtualizado: Evento) {
+    this.eventos[index] = eventoAtualizado;
+    this.salvarNoLocalStorage();
+  }
 }
+
