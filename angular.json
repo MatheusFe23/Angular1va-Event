@@ -3,18 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TodoAngular": {
+    "Angular-1VA": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
-          "standalone": false
-        },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
-        "@schematics/angular:pipe": {
-          "standalone": false
+          "style": "scss"
         }
       },
       "root": "",
@@ -24,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/todo-angular",
+            "outputPath": "dist/angular-1-va",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -71,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TodoAngular:build:production"
+              "buildTarget": "Angular-1VA:build:production"
             },
             "development": {
-              "buildTarget": "TodoAngular:build:development"
+              "buildTarget": "Angular-1VA:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -105,8 +98,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "6db47494-f81c-41c1-808f-3e60cdaa419e"
   }
 }
