@@ -4,6 +4,7 @@ import {NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-listar',
+  standalone: true,
   templateUrl: './listar.component.html',
   imports: [
     NgIf,

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './excluir.component.html',
   styleUrl: './excluir.component.scss'
 })
-export class ExcluirComponent {
+export class GerenciarComponent {
 
 }
