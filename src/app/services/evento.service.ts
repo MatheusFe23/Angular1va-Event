@@ -9,7 +9,6 @@ export interface Evento {
   local: string;
 }
 
-// evento.service.ts
 @Injectable({
   providedIn: 'root',
 })
